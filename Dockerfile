@@ -18,7 +18,7 @@ RUN apt-get -y install default-jdk
 # Install apps
 RUN apt-get -y install nodejs nodejs-legacy npm mongodb-org firefox python-pip xvfb
 
-# Install mocha
+# Install forever
 RUN npm install -g forever
 
 # Change the root user's password
@@ -34,8 +34,10 @@ RUN mkdir -p /var/run/sshd
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
 RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
 
+# Adding the requirements file with configs to install robot framework and selenium
 ADD requirements.txt /opt/requirements.txt
 
+# Install robot framework and selenium
 RUN pip install -r /opt/requirements.txt
 
 EXPOSE 22
