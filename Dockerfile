@@ -16,7 +16,7 @@ RUN apt-get -y install openssh-server
 RUN apt-get -y install default-jdk
 
 # Install apps
-RUN apt-get -y install nodejs nodejs-legacy npm mongodb-org firefox python-pip xvfb
+RUN apt-get -y install nodejs nodejs-legacy npm mongodb-org firefox python-pip xvfb curl
 
 # Install forever
 RUN npm install -g forever
