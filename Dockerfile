@@ -16,7 +16,13 @@ RUN apt-get -y install openssh-server
 RUN apt-get -y install default-jdk
 
 # Install apps
-RUN apt-get -y install nodejs nodejs-legacy npm mongodb-org firefox python-pip xvfb curl
+RUN apt-get -y install nodejs nodejs-legacy npm mongodb-org python-pip xvfb curl
+
+# Install firefox version 30
+RUN wget http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/30.0/linux-x86_64/en-US/firefox-30.0.tar.bz2
+RUN tar -xjvf firefox-30.0.tar.bz2
+RUN mv firefox /opt/firefox30.0
+RUN ln -sf /opt/firefox30.0/firefox /usr/bin/firefox
 
 # Install forever
 RUN npm install -g forever
