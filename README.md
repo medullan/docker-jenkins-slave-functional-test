@@ -1,5 +1,4 @@
 #Docker Jenkins Slave for Functional Testing
-===========================================
 
 ##Purpose
 This Dockerfile contain tools to do functional testing in a docker container.
