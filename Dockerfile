@@ -28,8 +28,8 @@ RUN ln -sf /opt/firefox30.0/firefox /usr/bin/firefox
 RUN npm install -g forever
 
 # Install fleetctl
-RUN wget https://github.com/coreos/fleet/releases/download/v0.8.1/fleet-v0.8.1-linux-amd64.tar.gz
-RUN tar -xzf fleet-v0.8.1-linux-amd64.tar.gz; cd fleet-v0.8.1-linux-amd64; mv fleetctl /usr/bin
+RUN wget https://github.com/coreos/fleet/releases/download/v0.8.3/fleet-v0.8.3-linux-amd64.tar.gz
+RUN tar -xzf fleet-v0.8.3-linux-amd64.tar.gz; cd fleet-v0.8.3-linux-amd64; mv fleetctl /usr/bin
 
 # Change the root user's password
 RUN echo "root:password" | chpasswd
